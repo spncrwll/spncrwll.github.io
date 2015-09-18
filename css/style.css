@@ -1,29 +1,3 @@
 body {
-  font-family: "Roboto", sans-serif;
-  color: #747704;
-  font-weight: 300;
-}
-
-.small-caps {
-  font-variant: small-caps;
-}
-
-.text-muted {
-  color: #bcbbbb;
-}
-
-.text-thin {
-  font-weight: 300;
-}
-
-.title-super {
-  font-size: 60px;
-}
-
-.title-logo {
-  margin-top: 20px;
-}
-
-.figs {
-  height: 300px;
+    text-align: center;
 }
