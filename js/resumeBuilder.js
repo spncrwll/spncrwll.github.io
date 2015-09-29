@@ -3,7 +3,7 @@ var work = {
   'jobs': [{
     'employer': 'Self-employed',
     'title': 'Translator',
-    'location': '(telecommuter)',
+    'location': '(remote/telecommuter)',
     'dates': 'September 2011-',
     'description': 'Translator of Japanese and German into English in the fields of intellectual property and scientific research publishing.'
   }, {
@@ -33,7 +33,7 @@ var projects = {
 
 var bio = {
   'name': 'Spencer Walle',
-  'role': 'Aspiring front-end Web Developer',
+  'role': 'Aspiring Front-end Web Developer',
   'welcomeMessage': 'Welcome to my résumé and portfolio!',
   'contacts': {
     'email': 'spncrwll@gmail.com',
@@ -41,7 +41,7 @@ var bio = {
     'github': 'spncrwll',
     'location': 'Reykjavík, Iceland'
   },
-  'skills': ['Translation', 'Front-end web development', 'marathoning TV shows'],
+  'skills': ['HTML', 'JavaScript', 'jQuery (and jQuery UI)', 'Bootstrap'],
   'bioPic': 'images/bioPic.jpg',
   'livedBefore': ['Marseille, France', 'Barcelona, Spain', 'Minneapolis, MN']
 };
@@ -174,7 +174,7 @@ projects.display();
 function locationizer(work_obj) {
   var locationArray = [];
   for (var i = 0; i < work_obj.jobs.length; i++) {
-    if (work_obj.jobs[i].location != '(telecommuter)') {
+    if (work_obj.jobs[i].location != '(remote/telecommuter)') {
     locationArray.push(work_obj.jobs[i].location);
   }
 }
