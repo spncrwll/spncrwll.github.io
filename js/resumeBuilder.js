@@ -3,7 +3,7 @@ var work = {
   'jobs': [{
     'employer': 'Self-employed',
     'title': 'Translator',
-    'location': 'Reykjavík, Iceland',
+    'location': '(telecommuter)',
     'dates': 'September 2011-',
     'description': 'Translator of Japanese and German into English in the fields of intellectual property and scientific research publishing.'
   }, {
@@ -33,8 +33,8 @@ var projects = {
 
 var bio = {
   'name': 'Spencer Walle',
-  'role': 'Front-end Web Developer',
-  'welcomeMessage': 'Welcome to my resume!',
+  'role': 'Aspiring front-end Web Developer',
+  'welcomeMessage': 'Welcome to my résumé and portfolio!',
   'contacts': {
     'email': 'spncrwll@gmail.com',
     'mobile': '+1 (555) 555-5555',
@@ -43,7 +43,7 @@ var bio = {
   },
   'skills': ['Translation', 'Front-end web development', 'marathoning TV shows'],
   'bioPic': 'images/bioPic.jpg',
-  'livedBefore': ['Marseille, France', 'Barcelona, Spain']
+  'livedBefore': ['Marseille, France', 'Barcelona, Spain', 'Minneapolis, MN']
 };
 
 var education = {
@@ -76,7 +76,7 @@ var education = {
     'courseURL': 'http://www.instagram.com'
   }]
 };
-var data = '%data%'
+var data = '%data%';
 var $header = $('#header');
 
 // begin section of code that appends information
@@ -124,7 +124,7 @@ education.display = function() {
     var formattedSchoolLocation = HTMLschoolLocation.replace(data, education.schools[i].location);
     var formattedSchoolMajor = HTMLschoolMajor.replace(data, education.schools[i].major);
     $('.education-entry:last').append(formattedSchoolName + formattedDegree + formattedSchoolDates + formattedSchoolLocation + formattedSchoolMajor);
-  };
+  }
   $('#education').append(HTMLonlineClasses);
   for (var i = 0; i < education.onlineCourses.length; i++) {
     $('#education').append(HTMLschoolStart);
@@ -132,7 +132,7 @@ education.display = function() {
     var formattedSchool = HTMLonlineSchool.replace(data, education.onlineCourses[i].school);
     var formattedDates = HTMLonlineDates.replace(data, education.onlineCourses[i].dates);
     $('.education-entry:last').append(formattedTitle + formattedSchool + formattedDates);
-  };
+  }
 };
 education.display();
 
@@ -147,7 +147,7 @@ work.display = function() {
     var formattedLocation = HTMLworkLocation.replace(data, work.jobs[i].location);
     var formattedDescription = HTMLworkDescription.replace(data, work.jobs[i].description);
     $('.work-entry:last').append(formattedEmployerAndTitle + formattedDates + formattedLocation + formattedDescription);
-  };
+  }
 };
 work.display();
 
@@ -173,9 +173,11 @@ projects.display();
 // locationizer
 function locationizer(work_obj) {
   var locationArray = [];
-  for (i = 0; i < work_obj.jobs.length; i++) {
+  for (var i = 0; i < work_obj.jobs.length; i++) {
+    if (work_obj.jobs[i].location != '(telecommuter)') {
     locationArray.push(work_obj.jobs[i].location);
   }
+}
   return locationArray;
 }
 
@@ -187,7 +189,12 @@ function inName(name) {
   name[1] = name[1].toUpperCase();
   name[0] = name[0].slice(0, 1).toUpperCase() + name[0].slice(1).toLowerCase();
   return name[0] + ' ' + name[1];
-};
+}
 
 /// map
 $('#mapDiv').append(googleMap);
+
+/// accordion
+$(document).on('ready', function() {
+  $("#accordion").accordion({collapsible: true});
+});
