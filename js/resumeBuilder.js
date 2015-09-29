@@ -41,7 +41,7 @@ var bio = {
     'github': 'spncrwll',
     'location': 'Reykjavík, Iceland'
   },
-  'skills': ['HTML', 'JavaScript', 'jQuery (and jQuery UI)', 'Bootstrap'],
+  'skills': ['HTML', 'CSS', 'JavaScript', 'jQuery (and jQuery UI)', 'Bootstrap'],
   'bioPic': 'images/bioPic.jpg',
   'livedBefore': ['Marseille, France', 'Barcelona, Spain', 'Minneapolis, MN']
 };
@@ -65,15 +65,15 @@ var education = {
   'onlineCourses': [{
     'title': 'Front-end Web Development',
     'school': 'Udacity',
-    'dates': '2015-',
+    'dates': 'August 2015-',
     'url': 'http://www.udacity.com',
     'courseURL': 'https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001'
   }, {
-    'title': 'Other online degree',
-    'school': 'Other Online School',
-    'dates': '2015-',
-    'url': 'http://www.instagram.com',
-    'courseURL': 'http://www.instagram.com'
+    'title': 'HTML & CSS, jQuery',
+    'school': 'Codecademy',
+    'dates': 'April 2015-',
+    'url': 'http://www.codecademy.com',
+    'courseURL': 'https://www.codecademy.com/spencerwalle'
   }]
 };
 var data = '%data%';
@@ -131,6 +131,7 @@ education.display = function() {
     var formattedTitle = HTMLonlineTitle.replace(data, education.onlineCourses[i].title);
     var formattedSchool = HTMLonlineSchool.replace(data, education.onlineCourses[i].school);
     var formattedDates = HTMLonlineDates.replace(data, education.onlineCourses[i].dates);
+    var formattedURL = HTMLonlineURL.replace(data, education.onlineCourses[i].url)
     $('.education-entry:last').append(formattedTitle + formattedSchool + formattedDates);
   }
 };
@@ -196,5 +197,5 @@ $('#mapDiv').append(googleMap);
 
 /// accordion
 $(document).on('ready', function() {
-  $("#accordion").accordion({collapsible: true});
+  $("#accordion").accordion({collapsible: true, heightStyle: 'content'});
 });
