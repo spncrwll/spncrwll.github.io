@@ -37,14 +37,18 @@ var bio = {
   'welcomeMessage': 'Welcome to my résumé and portfolio!',
   'contacts': {
     'email': 'spncrwll@gmail.com',
-    'mobile': '+1 (555) 555-5555',
-    'github': 'spncrwll',
     'location': 'Reykjavík, Iceland'
   },
   'skills': ['HTML', 'CSS', 'JavaScript', 'jQuery (and jQuery UI)', 'Bootstrap'],
   'bioPic': 'images/bioPic.jpg',
   'livedBefore': ['Marseille, France', 'Barcelona, Spain', 'Minneapolis, MN']
 };
+
+var badges = {
+'linkedIn': '<a href="https://is.linkedin.com/pub/spencer-walle/20/876/3ab" target="_blank"><img src="images/In-2C-128px-R.png" width="20" height="20" alt="View Spencer Walle\'s LinkedIn profile" style="float:right"></a>',
+'googlePlus': '<a href="https://plus.google.com/+SpencerWalle" target="_blank"><img src="https://developers.google.com/+/images/branding/g+138.png" width="20" height="20" alt="View Spencer Walle\'s Google+ profile" style="float:right"></a>',
+'gitHub': '<a href="https://github.com/spncrwll" target="_blank"><img src="images/GitHub-Mark-Light-120px-plus.png" width="20" height="20" alt="View Spencer Walle\'s Github profile" style="float:right"></a>'
+}
 
 var education = {
   'schools': [{
@@ -65,19 +69,20 @@ var education = {
   'onlineCourses': [{
     'title': 'Front-end Web Development',
     'school': 'Udacity',
-    'dates': 'August 2015-',
+    'dates': 'August 2015-present',
     'url': 'http://www.udacity.com',
     'courseURL': 'https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001'
   }, {
     'title': 'HTML & CSS, jQuery',
     'school': 'Codecademy',
-    'dates': 'April 2015-',
+    'dates': 'April 2015-present',
     'url': 'http://www.codecademy.com',
     'courseURL': 'https://www.codecademy.com/spencerwalle'
   }]
 };
 var data = '%data%';
 var $header = $('#header');
+badges.together = badges.linkedIn + badges.googlePlus + badges.gitHub;
 
 // begin section of code that appends information
 // name, role, biopic, welcome message
@@ -86,7 +91,7 @@ bio.displayInfo = function() {
   var formattedRole = HTMLheaderRole.replace(data, bio.role);
   var formattedbioPic = HTMLbioPic.replace(data, bio.bioPic);
   var formattedWelcome = HTMLwelcomeMsg.replace(data, bio.welcomeMessage);
-  $header.prepend(formattedRole);
+  $header.prepend(" " + formattedRole + badges.together + '<hr/>');
   $header.prepend(formattedName);
   $header.append(formattedbioPic);
   $header.append(formattedWelcome);
@@ -96,11 +101,10 @@ bio.displayInfo();
 // header and footer contacts
 bio.displayContacts = function() {
   var formattedEmail = HTMLemail.replace(/%data%/g, bio.contacts.email);
-  var formattedMobile = HTMLmobile.replace(data, bio.contacts.mobile);
-  var formattedGithub = HTMLgithub.replace(data, bio.contacts.github);
   var formattedLocation = HTMLlocation.replace(data, bio.contacts.location);
-  $('#topContacts').append(formattedEmail + formattedMobile + formattedGithub + formattedLocation);
-  $('#footerContacts').append(formattedEmail + formattedMobile + formattedGithub + formattedLocation);
+
+  $('#topContacts').append(formattedEmail + formattedLocation);
+  $('#footerContacts').append(formattedEmail + formattedLocation);
 };
 bio.displayContacts();
 
@@ -171,17 +175,6 @@ projects.display = function() {
 projects.display();
 //end code that appends information
 
-// locationizer
-function locationizer(work_obj) {
-  var locationArray = [];
-  for (var i = 0; i < work_obj.jobs.length; i++) {
-    if (work_obj.jobs[i].location != '(remote/telecommuter)') {
-    locationArray.push(work_obj.jobs[i].location);
-  }
-}
-  return locationArray;
-}
-
 // international naming
 $('#main').append(internationalizeButton);
 
@@ -197,5 +190,8 @@ $('#mapDiv').append(googleMap);
 
 /// accordion
 $(document).on('ready', function() {
-  $("#accordion").accordion({collapsible: true, heightStyle: 'content'});
+  $("#accordion").accordion({
+    collapsible: true,
+    heightStyle: 'content'
+  });
 });
