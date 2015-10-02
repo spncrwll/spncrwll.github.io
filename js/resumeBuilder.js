@@ -17,17 +17,11 @@ var work = {
 
 var projects = {
   'projects': [{
-    'title': 'Patent for a \'mobile telephone\'',
-    'dates': 'Published on Nov 6, 2013',
-    'description': 'A mobile telephone in which a cartilage conduction unit for making contact with the ear cartilage is provided to at least one of two corner parts at an upper side of the mobile telephone. [...]',
-    'images': ['images/project1_image1.png', 'images/project1_image2.png'],
-    'link': 'http://www.google.com/patents/EP2661055A1'
-  }, {
-    'title': 'Patent for a \'heat pump system\'',
-    'dates': 'Published on Nov 29, 2012',
-    'description': 'A refrigerant circuit includes a compressor, a heat source-side heat exchanger, and a usage-side heat exchanger capable of heating an aqueous medium. [...]',
-    'images': ['images/project2_image1.png', 'images/project2_image2.png'],
-    'link': 'https://www.google.com/patents/US20120297808'
+    'title': 'Frogger-style game',
+    'dates': 'Sep 2015',
+    'description': 'In this clone of the classic game, Frogger, Udacity provided art assets and a game engine, while I coded a player, enemies, and other game entities in JavaScript\'s object-oriented pseudo-classical style. This entailed creating enemy subclasses with different movement patterns and sprites.',
+    'images': ['images/char-boy.png', 'images/enemy-bug-forward.png'],
+    'link': 'frogger.html'
   }]
 };
 
@@ -45,9 +39,9 @@ var bio = {
 };
 
 var badges = {
-'linkedIn': '<a href="https://is.linkedin.com/pub/spencer-walle/20/876/3ab" target="_blank"><img src="images/In-2C-128px-R.png" width="20" height="20" alt="View Spencer Walle\'s LinkedIn profile" style="float:right"></a>',
-'googlePlus': '<a href="https://plus.google.com/+SpencerWalle" target="_blank"><img src="https://developers.google.com/+/images/branding/g+138.png" width="20" height="20" alt="View Spencer Walle\'s Google+ profile" style="float:right"></a>',
-'gitHub': '<a href="https://github.com/spncrwll" target="_blank"><img src="images/GitHub-Mark-Light-120px-plus.png" width="20" height="20" alt="View Spencer Walle\'s Github profile" style="float:right"></a>'
+'linkedIn': '<a href="https://is.linkedin.com/pub/spencer-walle/20/876/3ab" target="_blank"><img src="images/In-2C-128px-R.png" width="20" height="20" alt="View Spencer Walle\'s LinkedIn profile"></a>',
+'googlePlus': '<a href="https://plus.google.com/+SpencerWalle" target="_blank"><img src="https://developers.google.com/+/images/branding/g+138.png" width="20" height="20" alt="View Spencer Walle\'s Google+ profile"></a>',
+'gitHub': '<a href="https://github.com/spncrwll" target="_blank"><img src="images/GitHub-Mark-Light-120px-plus.png" width="20" height="20" alt="View Spencer Walle\'s Github profile"></a>'
 }
 
 var education = {
@@ -82,7 +76,7 @@ var education = {
 };
 var data = '%data%';
 var $header = $('#header');
-badges.together = badges.linkedIn + badges.googlePlus + badges.gitHub;
+badges.together = '<span style="float:right">' + badges.linkedIn + badges.googlePlus + badges.gitHub + '</span>';
 
 // begin section of code that appends information
 // name, role, biopic, welcome message
