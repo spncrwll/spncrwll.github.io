@@ -4,7 +4,7 @@ var work = {
     'employer': 'Self-employed',
     'title': 'Translator',
     'location': '(remote/telecommuter)',
-    'dates': 'September 2011-',
+    'dates': 'September 2011-present',
     'description': 'Translator of Japanese and German into English in the fields of intellectual property and scientific research publishing.'
   }, {
     'employer': 'Park IP',
@@ -41,7 +41,8 @@ var bio = {
 var badges = {
 'linkedIn': '<a href="https://is.linkedin.com/pub/spencer-walle/20/876/3ab" target="_blank"><img src="images/In-2C-128px-R.png" width="20" height="20" alt="View Spencer Walle\'s LinkedIn profile"></a>',
 'googlePlus': '<a href="https://plus.google.com/+SpencerWalle" target="_blank"><img src="https://developers.google.com/+/images/branding/g+138.png" width="20" height="20" alt="View Spencer Walle\'s Google+ profile"></a>',
-'gitHub': '<a href="https://github.com/spncrwll" target="_blank"><img src="images/GitHub-Mark-Light-120px-plus.png" width="20" height="20" alt="View Spencer Walle\'s Github profile"></a>'
+'gitHub': '<a href="https://github.com/spncrwll" target="_blank"><img src="images/GitHub-Mark-Light-120px-plus.png" width="20" height="20" alt="View Spencer Walle\'s Github profile"></a>',
+'wordPress': '<a href="https://spncrwll.wordpress.com/" target="_blank"><img src="https://s.w.org/favicon.ico?2" width="20" height="20" alt="View Spencer Walle\'s WordPress profile"></a>'
 }
 
 var education = {
@@ -49,7 +50,7 @@ var education = {
     'name': 'Princeton University',
     'location': 'Princeton, NJ (USA)',
     'degree': 'BA',
-    'major': 'Near Eastern Studies, South Asian Studies',
+    'major': 'Near Eastern Studies, South Asian Studies (<i>summa cum laude</i>)',
     'dates': '2006-2010',
     'url': 'http://www.princeton.edu'
   }, {
@@ -67,7 +68,7 @@ var education = {
     'url': 'http://www.udacity.com',
     'courseURL': 'https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001'
   }, {
-    'title': 'HTML & CSS, jQuery',
+    'title': 'HTML & CSS, jQuery, command line',
     'school': 'Codecademy',
     'dates': 'April 2015-present',
     'url': 'http://www.codecademy.com',
@@ -76,7 +77,7 @@ var education = {
 };
 var data = '%data%';
 var $header = $('#header');
-badges.together = '<span style="float:right">' + badges.linkedIn + badges.googlePlus + badges.gitHub + '</span>';
+badges.together = '<span style="float:right">' + badges.linkedIn + badges.googlePlus + badges.gitHub + badges.wordPress + '</span>';
 
 // begin section of code that appends information
 // name, role, biopic, welcome message
@@ -121,7 +122,7 @@ education.display = function() {
     var formattedSchoolDates = HTMLschoolDates.replace(data, education.schools[i].dates);
     var formattedSchoolLocation = HTMLschoolLocation.replace(data, education.schools[i].location);
     var formattedSchoolMajor = HTMLschoolMajor.replace(data, education.schools[i].major);
-    $('.education-entry:last').append(formattedSchoolName + formattedDegree + formattedSchoolDates + formattedSchoolLocation + formattedSchoolMajor);
+    $('.education-entry:last').append(formattedSchoolName + formattedDegree + formattedSchoolDates + formattedSchoolLocation + formattedSchoolMajor + '<br><br>');
   }
   $('#education').append(HTMLonlineClasses);
   for (var i = 0; i < education.onlineCourses.length; i++) {
@@ -130,7 +131,7 @@ education.display = function() {
     var formattedSchool = HTMLonlineSchool.replace(data, education.onlineCourses[i].school);
     var formattedDates = HTMLonlineDates.replace(data, education.onlineCourses[i].dates);
     var formattedURL = HTMLonlineURL.replace(data, education.onlineCourses[i].url)
-    $('.education-entry:last').append(formattedTitle + formattedSchool + formattedDates);
+    $('.education-entry:last').append(formattedTitle + formattedSchool + formattedDates + '<br><br>');
   }
 };
 education.display();
@@ -145,7 +146,7 @@ work.display = function() {
     var formattedDates = HTMLworkDates.replace(data, work.jobs[i].dates);
     var formattedLocation = HTMLworkLocation.replace(data, work.jobs[i].location);
     var formattedDescription = HTMLworkDescription.replace(data, work.jobs[i].description);
-    $('.work-entry:last').append(formattedEmployerAndTitle + formattedDates + formattedLocation + formattedDescription);
+    $('.work-entry:last').append(formattedEmployerAndTitle + formattedDates + formattedLocation + formattedDescription + '<br>');
   }
 };
 work.display();

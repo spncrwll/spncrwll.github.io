@@ -1,3 +1,7 @@
+. {
+  font-family: 'Roboto', sans-serif;
+}
+
 body,
 div,
 ul,
@@ -11,7 +15,6 @@ h5,
 h6 {
   padding:0;
   margin:0;
-  font-family: "Roboto", sans-serif;
 }
 
 .clear-fix {
@@ -40,7 +43,7 @@ h2 {
 }
 
 h3 {
-  font-style: italic;
+  font-weght: bold;
   font-size: 20px;
   color: #000;
   line-height: 22px;
@@ -51,6 +54,7 @@ h4 {
   font-size: 14px;
   color: #4a4a4a;
   line-height: 17px;
+  text-decoration: underline;
 }
 
 h2,
@@ -66,7 +70,7 @@ h5 {
   font-size: 14px;
   color: #999;
   line-height: 16px;
-  float: left;
+  display: inline;
 }
 
 .location-text {
@@ -75,7 +79,6 @@ h5 {
   color: #999;
   line-height: 16px;
   float: right;
-
 }
 
 p {
@@ -106,17 +109,26 @@ a {
   display: none;
 }
 
-.orange {
-  background-color: #99ccff;
+.blue {
+  background-color: #222;
 }
 
-.orange-text {
-  color: #99ccff;
+.blue-text {
+  color: #222;
 }
 
 .white-text {
   font-weight: bold;
   color: #fff;
+}
+
+.header-text {
+  font-weight: bold;
+  color: #E0F0FF;
+  background-color: gray;
+  padding: 5px;
+  border: 2px solid black;
+  border-radius: 20%;
 }
 
 .gray {
@@ -129,9 +141,11 @@ a {
   background-color: #4a4a4a;
 }
 
-/* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-image: url('../images/background.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .flex-box {
@@ -153,14 +167,12 @@ ul {
 
 .biopic {
   float: left;
-  padding: 10px;
+  padding: none;
+  margin: 10px;
   width: 200px;
   display: none;
   border-radius: 15%;
-}
-
-img {
-  padding: 10px;
+  border: 2px solid black;
 }
 
 #lets-connect {
